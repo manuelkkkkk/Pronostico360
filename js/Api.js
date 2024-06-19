@@ -75,19 +75,19 @@ search.addEventListener('click', () => {
             // Asigna una imagen según el estado del tiempo principal
             switch (json.weather[0].main) {
                 case 'Clear':
-                    image.src = '/assest/img/clear.png';
+                    image.src = './assest/img/clear.png';
                     break;
                 case 'Rain':
-                    image.src = '/assest/img/rain.png';
+                    image.src = './assest/img/rain.png';
                     break;
                 case 'Snow':
-                    image.src = '/assest/img/snow.png';
+                    image.src = './assest/img/snow.png';
                     break;
                 case 'Clouds':
-                    image.src = '/assest/img/cloud.png';
+                    image.src = './assest/img/cloud.png';
                     break;
                 case 'Haze':
-                    image.src = '/assest/img/mist.png';
+                    image.src = './assest/img/mist.png';
                     break;
                 default:
                     image.src = ''; // Por defecto, no se muestra ninguna imagen
