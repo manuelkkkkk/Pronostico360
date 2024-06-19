@@ -1,8 +1,4 @@
-// Comprueba si el usuario está autenticado, de lo contrario redirige a la página de inicio de sesión
-const user = JSON.parse(localStorage.getItem('login_success')) || false;
-if (!user) {
-    window.location.href = 'login.html';
-}
+
 
 // Configura el evento click para el botón de logout
 const logout = document.querySelector('#logout');
