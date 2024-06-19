@@ -1,0 +1,382 @@
+/* Importa la fuente 'Poppins' desde Google Fonts con diferentes pesos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
+    font-family: 'Poppins', sans-serif; /* Establece la fuente principal para toda la página */
+}
+
+/* Estilos para el cuerpo (body) */
+body {
+    /* Fondo con imagen desde URL */
+    background: url(/assest/img/Fondo-foto-flores.avif) no-repeat; 
+    display: flex;
+    min-height: 100vh; /* Establece la altura mínima del viewport */
+    flex-direction: column; /* Ajusta la dirección de los elementos hijos en columna */
+    background-repeat: no-repeat; /* Evita la repetición del fondo */
+    background-size: cover; /* Ajusta el tamaño del fondo para cubrir */
+}
+
+/* Estilos para el encabezado (header) */
+header {
+    position: fixed; /* Establece la posición fija en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 30px; /* Añade relleno interno al encabezado */
+    /* Fondo con degradado lineal */
+    background: linear-gradient(135deg, rgba(0, 114, 255, 0.8), rgba(0, 198, 255, 0.8));
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a los lados */
+    align-items: center;
+    z-index: 100; /* Establece el índice de apilamiento */
+    gap: 30px; /* Espacio entre los elementos hijos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilos para el logo en el encabezado */
+.logo {
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    pointer-events: none; /* Deshabilita los eventos de puntero */
+}
+
+/* Estilos para los enlaces de navegación */
+.navigation a {
+    position: relative;
+    font-size: 20px;
+    color: #0b0101;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+/* Estilos para los enlaces de navegación al pasar el ratón */
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para la línea animada debajo de los enlaces de navegación */
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0); /* Inicialmente sin escala */
+    transition: transform .5s; /* Transición de la transformación */
+}
+
+/* Estilos para la línea animada al pasar el ratón sobre los enlaces de navegación */
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1); /* Con escala completa */
+}
+
+/* Estilos para el botón de cierre de sesión */
+.navigation .logout {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s; /* Transición de la animación */
+}
+
+/* Estilos al pasar el ratón sobre el botón de cierre de sesión */
+.navigation .logout:hover {
+    background: white;
+    color: #162938;
+}
+
+/* Estilos para el título principal (h1) del artículo */
+article h1 {
+    padding: 100px 0 20px; /* Ajusta el espacio interno (padding) */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-family: 'Segoe UI', 'Roboto', sans-serif; /* Fuentes alternativas */
+    font-size: 3rem; /* Tamaño de fuente */
+    color: #fff; /* Color blanco para el texto */
+    font-weight: bold; /* Utiliza negrita */
+    line-height: 1.2; /* Altura de línea */
+}
+
+/* Estilos para el subtítulo (h2) del artículo */
+article h2 {
+    margin-top: 0; /* Elimina el margen superior por defecto */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-family: 'Segoe UI', 'Roboto', sans-serif; /* Fuentes alternativas */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: #fff; /* Color blanco para el texto */
+    font-weight: normal; /* Utiliza el peso normal de la fuente */
+    line-height: 1.4; /* Altura de línea */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: aliceblue; /* Color del texto */
+    font-size: 100%; /* Tamaño de fuente */
+    font-family: 'Times New Roman', Times, serif; /* Fuentes alternativas */
+}
+
+/* Estilos para los párrafos dentro del contenedor */
+.container p {
+    margin-left: 40px;
+    margin-top: 20px; /* Ajusta el espacio superior */
+    padding: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 1.4em; /* Tamaño de fuente */
+    float: right; /* Flota el elemento a la derecha */
+}
+
+/* Estilos para los elementos div dentro del contenedor */
+.container > div {
+    width: 50%;
+    padding: 30px;
+    margin-top: 10%; /* Ajusta el margen superior */
+}
+
+
+/* Estilos para las imágenes dentro del contenedor */
+.container img {
+    width: 60%; /* Ancho del 60% del contenedor */
+    height: 60%; /* Altura del 60% del contenedor */
+    object-fit: cover; /* Escala la imagen para que cubra el contenedor manteniendo la relación de aspecto */
+    margin-left: 20%; /* Margen izquierdo del 20% del contenedor */
+    border-radius: 20px 50%; /* Radio de borde con esquinas redondeadas */
+}
+
+/* Estilos para los botones dentro del contenedor */
+.container button {
+    width: 60%; /* Ancho del 60% del contenedor */
+    padding: 10px; /* Relleno interno del botón */
+    margin-top: 20px; /* Margen superior */
+    background: transparent; /* Fondo transparente */
+    border: 2px solid white; /* Borde sólido blanco de 2px */
+    outline: none; /* Elimina el contorno al enfocar */
+    border-radius: 10px; /* Radio de borde con esquinas redondeadas */
+    color: rgb(0, 0, 0); /* Color del texto */
+    font-size: 20px; /* Tamaño de fuente */
+    font-weight: 600; /* Peso de la fuente */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-left: 20%; /* Margen izquierdo del 20% del contenedor */
+    transition: .5s; /* Transición para efectos suaves */
+}
+
+/* Estilos al pasar el ratón sobre los botones */
+.container button:hover {
+    background: rgb(255, 255, 255); /* Cambia el fondo al pasar el ratón */
+    color: #000000; /* Cambia el color del texto al pasar el ratón */
+}
+
+/* Estilos para el pie de página (footer) */
+footer {
+    position: fixed; /* Establece la posición fija en la parte inferior */
+    bottom: 0;
+}
+
+/* Media query para alturas máximas de 800px */
+@media (max-height: 800px) {
+    footer {
+        position: static; /* Establece la posición estática cuando la altura es menor o igual a 800px */
+    }
+    header {
+        padding-top: 40px; /* Ajusta el relleno superior del encabezado */
+    }
+}
+
+/* Estilos para el pie de página distribuido (footer-distributed) */
+.footer-distributed {
+    background-color: #2d2a30; /* Color de fondo */
+    box-sizing: border-box;
+    width: 100%; /* Ancho del 100% */
+    text-align: left; /* Alineación del texto a la izquierda */
+    font: bold 16px sans-serif; /* Fuente en negrita de 16px sin serifas */
+    padding: 50px 50px 60px 50px; /* Relleno interno del pie de página */
+    margin-top: 80px; /* Margen superior */
+}
+
+/* Estilos para las secciones del pie de página (footer-left, footer-center, footer-right) */
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Estilos para la parte izquierda del pie de página (footer-left) */
+.footer-distributed .footer-left {
+    width: 30%; /* Ancho del 30% */
+}
+
+/* Estilos para los títulos del pie de página (footer-distributed h3) */
+.footer-distributed h3 {
+    color: #ffffff; /* Color del texto */
+    font: normal 36px 'Cookie', cursive; /* Fuente del título */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilos para partes resaltadas del título del pie de página (footer-distributed h3 span) */
+.footer-distributed h3 span {
+    color: #e0ac1c; /* Color amarillo */
+}
+
+/* Estilos para los enlaces del pie de página (footer-links) */
+.footer-distributed .footer-links {
+    color: #ffffff; /* Color del texto */
+    margin: 20px 0 12px; /* Margen */
+}
+
+/* Estilos para los enlaces del pie de página (footer-links a) */
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda el color del texto */
+}
+
+/* Estilos para el nombre de la empresa del pie de página (footer-company-name) */
+.footer-distributed .footer-company-name {
+    color: #8f9296; /* Color del texto */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: normal; /* Peso de la fuente */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilos para la parte central del pie de página (footer-center) */
+.footer-distributed .footer-center {
+    width: 35%; /* Ancho del 35% */
+}
+
+/* Estilos para los íconos en el pie de página (footer-center i) */
+.footer-distributed .footer-center i {
+    background-color: #33383b; /* Color de fondo del ícono */
+    color: #ffffff; /* Color del ícono */
+    font-size: 25px; /* Tamaño de fuente del ícono */
+    width: 38px; /* Ancho del ícono */
+    height: 38px; /* Altura del ícono */
+    border-radius: 50%; /* Radio de borde del ícono (forma circular) */
+    text-align: center; /* Alineación del texto al centro */
+    line-height: 42px; /* Altura de línea */
+    margin: 10px 15px; /* Margen */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+/* Estilos para el ícono del sobre en el pie de página (footer-center i.fa-envelope) */
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px; /* Tamaño de fuente */
+    line-height: 38px; /* Altura de línea */
+}
+
+/* Estilos para los párrafos en el pie de página (footer-center p) */
+.footer-distributed .footer-center p {
+    display: inline-block; /* Mostrar como bloque en línea */
+    color: #ffffff; /* Color del texto */
+    vertical-align: middle; /* Alineación vertical */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilos para partes resaltadas en los párrafos del pie de página (footer-center p span) */
+.footer-distributed .footer-center p span {
+    display: block; /* Mostrar como bloque */
+    font-weight: normal; /* Peso de la fuente normal */
+    font-size: 14px; /* Tamaño de fuente */
+    line-height: 2; /* Altura de línea */
+}
+
+/* Estilos para los enlaces en los párrafos del pie de página (footer-center p a) */
+.footer-distributed .footer-center p a {
+    color: #e0ac1c; /* Color amarillo */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilos para la parte derecha del pie de página (footer-right) */
+.footer-distributed .footer-right {
+    width: 30%; /* Ancho del 30% */
+}
+
+
+/* Estilos para la sección "footer-company-about" */
+.footer-distributed .footer-company-about {
+    line-height: 20px; /* Altura de línea */
+    color: #92999f; /* Color del texto */
+    font-size: 13px; /* Tamaño de fuente */
+    font-weight: normal; /* Peso de la fuente */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilos para partes resaltadas dentro de "footer-company-about" */
+.footer-distributed .footer-company-about span {
+    display: block; /* Mostrar como bloque */
+    color: #ffffff; /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente en negrita */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para la sección "footer-icons" */
+.footer-distributed .footer-icons {
+    margin-top: 25px; /* Margen superior */
+}
+
+/* Estilos para los íconos en "footer-icons" */
+.footer-distributed .footer-icons a {
+    display: inline-block; /* Mostrar como bloque en línea */
+    width: 35px; /* Ancho */
+    height: 35px; /* Altura */
+    cursor: pointer; /* Cursor al pasar sobre el ícono */
+    background-color: #33383b; /* Color de fondo */
+    border-radius: 2px; /* Radio de borde */
+    font-size: 20px; /* Tamaño de fuente */
+    color: #ffffff; /* Color del ícono */
+    text-align: center; /* Alineación del texto */
+    line-height: 35px; /* Altura de línea */
+    margin-right: 3px; /* Margen derecho */
+    margin-bottom: 5px; /* Margen inferior */
+}
+
+/* Estilos al pasar el ratón sobre los íconos */
+.footer-distributed .footer-icons a:hover {
+    background-color: #3F71EA; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para los enlaces al pasar el ratón sobre ellos */
+.footer-links a:hover {
+    color: #3F71EA; /* Cambia el color del texto al pasar el ratón */
+}
+
+/* Media query para anchos máximos de 880px */
+@media (max-width: 880px) {
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block; /* Mostrar como bloque */
+        width: 100%; /* Ancho del 100% */
+        margin-bottom: 40px; /* Margen inferior */
+        text-align: center; /* Alineación del texto al centro */
+    }
+    .footer-distributed .footer-center i {
+        margin-left: 0; /* Establece el margen izquierdo a cero */
+    }
+}
+

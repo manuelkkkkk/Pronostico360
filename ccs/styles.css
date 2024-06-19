@@ -1,0 +1,287 @@
+/* Importación de fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Se establece la fuente predeterminada para todo el documento */
+  scroll-behavior: smooth; /* Transición de desplazamiento suave */
+}
+
+/* Estilos del cuerpo de la página */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura mínima de la ventana visible */
+  /* Fondo con imagen de fondo y estilos relacionados */
+  background: url(/assest/img/Fondo-foto-flores.avif) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Estilos de la cabecera */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px; /* Relleno en la parte superior e inferior de la cabecera */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99; /* Capa z para superposición */
+}
+
+.logo {
+  font-size: 2em;
+  color: white;
+  user-select: none; /* Evitar la selección de texto en el logotipo */
+}
+
+/* Estilos del botón de inicio en la barra de navegación */
+
+
+/* Estilos del botón */
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transition: 0.5s; /* Transición suave */
+}
+
+.navigation .btnLogin-popup:hover {
+  background: white;
+  color: #162938;
+}
+
+/* Estilos del contenedor principal */
+.wrapper1 {
+  position: relative;
+  width: 500px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+/* Estilos del párrafo dentro del contenedor */
+.wrapper1 p {
+  font-size: 1.1em;
+  color: white;
+  margin-left: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilos del título dentro del contenedor */
+.wrapper1 h2 {
+  font-size: 1.5em;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+/* Estilos del contenedor principal */
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform: scale(0);
+  transition: transform .5s ease, height .2s ease; /* Transición de escalado y altura */
+}
+
+.wrapper.active-popup {
+  transform: scale(1);
+}
+
+.wrapper.active {
+  height: 520px; /* Altura adicional al contenedor cuando está activo */
+}
+
+/* Estilos de los formularios dentro del contenedor */
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper .form-box.login {
+  transition: transform .18s ease;
+  transition: none;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+  transition: none;
+  transform: translateX(-400px); /* Desplazamiento del formulario de inicio de sesión cuando está activo */
+}
+
+.wrapper .form-box.register {
+  position: absolute;
+  transform: translateX(400px); /* Desplazamiento inicial del formulario de registro */
+}
+
+.wrapper.active .form-box.register {
+  transition: transform .28s ease;
+  transform: translateX(0); /* Desplazamiento del formulario de registro cuando está activo */
+}
+
+/* Estilos del botón de cierre */
+.wrapper .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: #379deb;
+  font-size: 2em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Estilos de títulos dentro de los formularios */
+.form-box h2 {
+  font-size: 2em;
+  color: #379deb;
+  text-align: center;
+}
+
+/* Estilos de los campos de entrada */
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #379deb;
+  margin: 30px 0;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #379deb;
+  font-weight: 500;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #379deb;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #379deb;
+  line-height: 57px;
+}
+
+/* Estilos para recordar contraseña y enlaces relacionados */
+.remember-forgot {
+  font-size: .75em;
+  color: #379deb;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  accent-color: #379deb;
+  margin-left: 3px;
+}
+
+.remember-forgot a {
+  color: #379deb;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos del botón de inicio de sesión y registro */
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #379deb;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Estilos de texto para enlaces de registro e inicio de sesión */
+.login-register {
+  font-size: 0.9em;
+  color: #379deb;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 30px;
+}
+
+.login-register p a {
+  color: #379deb;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.login-register p a:hover {
+  text-decoration: underline;
+}

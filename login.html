@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="ccs/styles.css"> <!-- Se vincula una hoja de estilos externa -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="Pronostico360 icon" href="assest/img/icono-tierra.png"> <!-- Se agrega un ícono de página -->
+</head>
+<body>
+    <div class="wrapper1">
+        <header>
+            <h2 class="logo">Pronostico360°</h2> <!-- Encabezado con el nombre del sitio -->
+        </header> 
+        <h2>"Una carrera 
+            contra el tiempo"</h2> <!-- Texto adicional -->
+        <p class="w-box">El calentamiento global es un fenómeno que afecta a todo el planeta, pero que tiene consecuencias desiguales y desproporcionadas en diferentes regiones y países.Verifica las condiciones climaticas con nuestra pagina.</p> <!-- Párrafo descriptivo -->
+        <div class="navigation">
+            <button class="btnLogin-popup">Iniciar</button> <!-- Botón para abrir formulario de inicio de sesión -->
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span> <!-- Icono para cerrar el formulario -->
+
+        <!-- Formulario de inicio de sesión -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#" id="loginForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email/text" required  id="correo"> <!-- Campo de correo electrónico -->
+                    <label>Correo</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required   id="clave"> <!-- Campo de contraseña -->
+                    <label>Contraseña</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Recuérdame</label> <!-- Checkbox para recordar usuario -->
+                </div>
+                <button type="submit" class="btn">Iniciar</button> <!-- Botón de inicio de sesión-->
+                <div class="login-register">
+                    <p>¿No tienes una cuenta?<a href="#" class="register-link">Regístrate</a></p> <!-- Enlace para registrar nueva cuenta -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulario de registro -->
+        <div class="form-box register">
+            <h2>Registro</h2>
+            <form action="#" id="signupForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required id="name"> <!-- Campo de nombre de usuario -->
+                    <label>Nombre de Usuario</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email/text" required id="email"> <!-- Campo de correo electrónico -->
+                    <label>Correo</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id="password"> <!-- Campo de contraseña -->
+                    <label>Contraseña</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Acepto todos los Términos y Servicios</label> <!-- Checkbox para aceptar términos -->
+                </div>
+                <button type="submit" class="btn">Registrar</button> <!-- Botón de registro -->
+                <div class="login-register">
+                    <p>¿Ya tienes una cuenta?<a href="#" class="login-link">Iniciar</a></p> <!-- Enlace para iniciar sesión -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script> <!-- Se incluye un script externo para la funcionalidad de inicio de sesión -->
+</body>
+</html>
